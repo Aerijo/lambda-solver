@@ -1,0 +1,55 @@
+import logic
+
+"""Takes a number and returns the successor"""
+SUCC = \n f x -> f (n f x)
+
+"""The first few Church numerals"""
+ZERO  = FALSE
+ONE   = SUCC ZERO
+TWO   = SUCC ONE
+THREE = SUCC TWO
+FOUR  = SUCC THREE
+FIVE  = SUCC FOUR
+SIX   = SUCC FIVE
+SEVEN = SUCC SIX
+EIGHT = SUCC SEVEN
+NINE  = SUCC EIGHT
+TEN   = SUCC NINE
+
+""" Demonstration of ZERO -> ONE using SUCC """
+>>>{succ_0}
+SUCC ZERO
+== (\n f x -> f (n f x)) (\x y -> y)
+=> \f x -> f ((\x y -> y) f x)
+=> \f x -> f (x)
+== \f x -> f x -- == ONE
+<<<
+
+"""
+Takes a number and returns the predecessor
+Note:
+  - PRED 0 == 0
+  - MINUS (smaller) (bigger) == 0
+"""
+PRED = \n f x -> n (\g h -> h (g f)) (\u -> x) (\u -> u)
+
+"""Returns TRUE/FALSE if the number is zero or not"""
+ISZERO  = \x -> x (\y -> FALSE) TRUE
+NOTZERO = \x -> NOT (ISZERO x)
+
+PLUS     = \m n -> n SUCC m
+MULTIPLY = \m n f -> m (n f)
+EXP      = \m n -> n m
+MINUS    = \m n -> n PRED m
+
+"""Less / greater than or equal"""
+LEQ = \m n -> ISZERO (MINUS m n)
+GEQ = \m n -> ISZERO (MINUS n m)
+
+"""Equal / not equal"""
+EQ  = \m n -> AND (LEQ m n) (LEQ n m)
+NEQ = \m n -> NOT (EQ m n)
+
+"""Less / greater than"""
+LT  = \m n -> NOT (GEQ m n)
+GT  = \m n -> NOT (LEQ m n)

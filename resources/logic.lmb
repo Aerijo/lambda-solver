@@ -1,0 +1,11 @@
+TRUE  = \x y -> x
+FALSE = \x y -> y
+
+NOT = \x -> x FALSE TRUE
+
+AND  = \a b -> a b a
+NAND = \a b -> a (NOT b) TRUE
+OR   = \a b -> a a b
+NOR  = \a b -> a FALSE (NOT b)
+XOR  = \a b -> a (NOT b) b
+NXOR = \a b -> a b (NOT b)

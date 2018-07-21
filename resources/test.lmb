@@ -1,0 +1,16 @@
+-- We can import files or modules anywhere in the script.
+import prelude
+
+-- This is a line comment
+/*
+This is a block comment
+*/
+
+-- This is a block. It's validity will be evaluated when run.
+>>> { tag }
+ID "foo"
+== (\x -> x) "foo"
+=> "foo"
+<<<
+
+> /*this is an expression*/ \x -> x -- and comments can go most places
