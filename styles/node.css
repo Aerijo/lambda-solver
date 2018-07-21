@@ -1,0 +1,44 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { margin:0; padding:0; }
+
+.node {
+  font-family: "menlo";
+  color: DarkBlue;
+  border: 0.5px solid #000;
+  padding: 10px;
+  /* padding-left: 5px; */
+  /* padding-right: 5px; */
+}
+
+.source {
+  font-family: "menlo"
+}
+
+.lambda-string {
+  font-family: "menlo";
+  color: Green;
+}
+
+.lambda-integer {
+  font-family: "menlo";
+  color: #D49701;
+}
+
+.lambda-function {
+  font-family: "menlo";
+  color: DarkMagenta;
+}
+
+.lambda-function-bound {
+  font-family: "menlo";
+  color: Tomato;
+}
+
+.lambda-terminal {
+  font-family: "menlo";
+  color: Blue;
+}
+
+.lambda-func_identifier {
+  font-family: "menlo";
+  color: Orange;
+}

@@ -4,9 +4,13 @@
   "version": "0.0.0",
   "description": "Evaluates lambda calculus expressions",
   "repository": "https://github.com/Aerijo/lambda-solver",
+  "comment": "https://github.com/atom/node-keytar/issues/77 solved version problems",
   "dependencies": {
+    "electron-rebuild": "^1.8.1",
+    "jquery": "^3.3.1",
+    "treant-js": "^1.0.1",
     "tree-sitter": "0.12.20",
-    "tree-sitter-lambda": "latest"
+    "tree-sitter-lambda": "^0.0.0"
   },
   "scripts": {
     "start": "electron ."
