@@ -3,24 +3,18 @@
   <head>
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="./web/treant/Treant.css" type="text/css"/>
+    <link rel="stylesheet" href="styles/Treant.css" type="text/css"/>
     <link rel="stylesheet" href="styles/super-simple.css">
-
     <link rel="stylesheet" href="styles/node.css">
     <link rel="stylesheet" href="styles/form.css">
 
-
     <title>Lambda Solver</title>
+
   </head>
   <body>
     <div class="target">
-      <label>Input: </label>
-      <input style="font-family: menlo;" type="text" onkeypress="buildTree(event)"/>
-    </div>
-    <div>
+      <input style="font-family: menlo;" type="text" placeholder="expression..." onkeypress="handleInputEvent(event)"/>
       <button style="font-family: menlo;" id="foo" onclick="updateTreeToNormal()">Normal</button>
-    </div>
-    <div>
       <button style="font-family: menlo;" id="bar" onclick="updateTreeStep()">Step</button>
     </div>
 

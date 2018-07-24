@@ -4,3 +4,6 @@
 - animations
 - Function definitions
 - imports
+- De Bruijn index the bound identifiers
+- Click apply to execute it manually (if possible)
+- Click func identifier to expand it

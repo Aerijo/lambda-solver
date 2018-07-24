@@ -1,0 +1,4 @@
+FIRST = \x y -> x
+SECOND = \x y -> y
+
+PAIR = \a b -> (\z -> z a b)

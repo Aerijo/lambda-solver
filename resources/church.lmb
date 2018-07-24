@@ -1,7 +1,6 @@
-import logic
-
 """Takes a number and returns the successor"""
 SUCC = \n f x -> f (n f x)
+
 
 """The first few Church numerals"""
 ZERO  = FALSE
@@ -33,13 +32,16 @@ Note:
 """
 PRED = \n f x -> n (\g h -> h (g f)) (\u -> x) (\u -> u)
 
+""" Build up the number from 0 (generally slower) """
+PREDTWO = \n -> n (\p z -> z (SUCC (p TRUE)) (p TRUE)) (\z -> z ZERO ZERO) FALSE
+
 """Returns TRUE/FALSE if the number is zero or not"""
 ISZERO  = \x -> x (\y -> FALSE) TRUE
 NOTZERO = \x -> NOT (ISZERO x)
 
 PLUS     = \m n -> n SUCC m
 MULTIPLY = \m n f -> m (n f)
-EXP      = \m n -> n m
+EXP      =  \m -> \n -> \f -> \x -> (n m) f x
 MINUS    = \m n -> n PRED m
 
 """Less / greater than or equal"""

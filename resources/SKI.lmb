@@ -17,4 +17,13 @@ S K K
 """ The omega combinator """
 O = \x -> x x
 
+""" The growing (?) combinator """
+D = \x -> x x x
+
 > O O -- very dangerous if allowed to continue unchecked.
+
+B = \x y z -> x (y z)
+C = \x y z -> x z y
+W = \x y -> x y y
+U = \x y -> y (x x y)
+Y = \f -> (\x -> f(x x)) (\x -> f (x x))

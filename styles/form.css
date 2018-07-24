@@ -1,6 +1,19 @@
 input {
-    width: 80%;
-    font-size: 12pt;
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border-style: solid;
+  border-radius: 4px;
+  border-color: purple;
+  font-size: 12pt;
+}
+
+.target {
+  margin: 20px 20px 20px 20px;
+}
+
+input:focus {
+    outline: none !important;
 }
 
 button {
